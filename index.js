@@ -4,6 +4,7 @@ const server = express();
 const dishesRouter = require("./routers/dishesRouter.js")
 const recipesRouter = require("./routers/recipesRouter.js")
 
+server.use(express.json());
 server.use('/api/dishes', dishesRouter);
 server.use('/api/recipes', recipesRouter);
 

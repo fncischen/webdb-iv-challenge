@@ -2,7 +2,7 @@
 // foriegn key notes
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('dishes', function(tbl){
+  return knex.schema.createTable("dishes", function(tbl){
     tbl.increments();
     tbl.string("name")
     .notNullable()
@@ -11,5 +11,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('dishes');
+    return knex.schema.dropTableIfExists("dishes");
 };
