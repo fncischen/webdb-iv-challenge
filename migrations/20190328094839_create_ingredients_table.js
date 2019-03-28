@@ -6,7 +6,7 @@ exports.up = function(knex, Promise) {
       tbl.string("recipe-name")
       .references("name").inTable("recipes");
       
-      tbl.float("amount_of_ingredients");
+      tbl.integer("amount_of_ingredients");
       tbl.string("units", 20);
 
     })
