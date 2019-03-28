@@ -7,7 +7,7 @@ exports.up = function(knex, Promise) {
       .notNullable()
       .unique();
 
-      tbl.string("dish_name").notNullable();
+      tbl.string("dish_name").notNullable().unique();
 
       tbl.foriegn("dish_name").references("name").inTable("dishes");
 

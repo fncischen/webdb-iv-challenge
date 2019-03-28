@@ -9,6 +9,7 @@ router.get("/", (req,res) => {
 })
 
 router.get("/:id", (req,res) => {
+    console.log("retrieving dish ", req.params.id)
     dishes.getDish(req.params.id)
     .then(result => res.status(200).json(result))
     .catch(err => res.status(500).json(err));
