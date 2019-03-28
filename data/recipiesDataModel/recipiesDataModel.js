@@ -2,7 +2,8 @@ const db = require('../data/dbConfig.js');
 
 module.exports = {
     getRecipes, 
-    addRecipe
+    addRecipe,
+    getRecipesByDishName
 }
 
 function getRecipes() {
@@ -14,5 +15,5 @@ function addRecipe(recipe) {
 }
 
 function getRecipesByDishName(dish_name) {
-    return db("recipies").where({"dish-name": dish_name});
+    return db("recipes").where({"dish-name": dish_name});
 }
