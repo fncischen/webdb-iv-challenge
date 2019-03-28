@@ -15,5 +15,5 @@ function addRecipe(recipe) {
 }
 
 function getRecipesByDishName(dish_name) {
-    return db("recipes").where({"dish-name": dish_name});
+    return db("recipes").where({"dish_name": dish_name});
 }
