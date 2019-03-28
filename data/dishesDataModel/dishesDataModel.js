@@ -18,7 +18,16 @@ function addDish(dish) {
 function getDish(id) {
     return db("dishes")
     .join("recipes", "recipes.dish-name", "=", "dish.name")
-    .select("dishes.name", "recipes.dish-name")
     .where({"dishes.id": id})
 
 }
+
+// sql output:
+// select id, recipies.dish-name
+// from Recipies, Dishes
+// where recipies.dish-name: dishes.name
+//       dishes.id: id 
+
+// step 1) get dishes table
+// step 2) join the dishes table to the recipies table, where the recipies name = dish name
+// step 3) set the condition that the dishes id must equal to the id reqested by client 
