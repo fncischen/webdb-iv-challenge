@@ -7,7 +7,7 @@ const recipesRouter = require("./routers/recipesRouter.js")
 server.use('/api/dishes', dishesRouter);
 server.use('/api/recipes', recipesRouter);
 
-const port = 500
+const port = 5000
 server.listen(port, () => {
     console.log(`\n *** Listening on ${port} *** \n`);
 })

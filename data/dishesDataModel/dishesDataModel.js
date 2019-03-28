@@ -14,8 +14,11 @@ function addDish(dish) {
     return db("dishes").insert(dish);
 }
 
+// https://knexjs.org/#Builder-join
 function getDish(id) {
     return db("dishes")
-    .where({id: id})
+    .join("recipes", "recipes.dish-name", "=", "dish.name")
+    .select("dishes.name", "recipes.dish-name")
+    .where({"dishes.id": id})
 
 }
