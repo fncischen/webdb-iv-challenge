@@ -23,6 +23,14 @@ function getDish(id) {
 
 }
 
+function goShopping(dish, recipe) {
+    return db("dishes")
+    .where("dishes.name", dish)
+    .join("recipes", "recipes.dish_name", "=", "dishes.name")
+    .where("recipe_name", recipe)
+    .join("ingredients", "ingredients.recipe_name", "=", "recipe.recipe.name")
+}
+
 // sql output:
 // select id, recipies.dish-name
 // from Recipies, Dishes
