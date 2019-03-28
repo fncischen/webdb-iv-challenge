@@ -2,9 +2,10 @@ const router = require('express').Router();
 const dishes = require("../data/dishesDataModel/dishesDataModel.js")
 
 router.get("/api/dishes", (req,res) => {
+    console.log("retrieving dishes!");
     dishes.getDishes()
     .then(result => res.status(200).json(result))
-    .catch(err => res.status(500).json(err));
+    .catch(() => res.status(500).json({errorMessage: "There was an error in retrieving your dishes!"}));
 })
 
 router.get("/api/dishes/:id", (req,res) => {
