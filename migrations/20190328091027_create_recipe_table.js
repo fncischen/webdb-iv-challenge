@@ -9,6 +9,8 @@ exports.up = function(knex, Promise) {
       .notNullable()
       .unique();
 
+      // how to add ingredients? 
+
     })
   };
   
