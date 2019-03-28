@@ -1,14 +1,14 @@
 const db = require('../data/dbConfig.js');
 
 module.exports = {
-    getRecipies, 
-    addRecipie
+    getRecipes, 
+    addRecipe
 }
 
-function getRecipies() {
-
+function getRecipes() {
+    return db("recipes");
 }
 
-function addRecipie() {
-    
+function addRecipe(recipe) {
+    return db("recipes").insert(recipe);
 }

@@ -7,13 +7,15 @@ module.exports = {
 }
 
 function getDishes() {
-
+    return db("dishes")
 }
 
 function addDish(dish) {
-    
+    return db("dishes").insert(dish);
 }
 
 function getDish(id) {
-    
+    return db("dishes")
+    .where({id: id})
+
 }
